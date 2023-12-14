@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>CCTC Announcement</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+    <style>
+      
+
+        
+    </style>
+</head>
+<body>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            
+        }
+        .navbar{
+            background-color: #181818;
+            color: #fbfbfb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            height: 70px;
+            box-sizing: border-box;
+            overflow: hidden;
+            width: 100%;
+            
+        }
+        .navbarContent{
+            display: flex;
+            align-items: center;
+            font-family:Helvetica, sans-serif;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            width: 98%;
+        }
+        .imageContainer{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .imageContainer img{
+            height: 40px;
+            width: 40px;
+        }
+        .titleLogoContainer{
+            width: 40%;
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+        }
+        .activityContainer{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            width: 60%;
+        }
+        .home,.createAnnouncement,.updates{
+            background-color: none;
+            border-radius: 20px;
+            padding: 10px;
+            font-weight: 500;
+            color: #fbfbfb;
+            border-radius: 10px;
+            transition: background-color .5s, font-weight .3s, color .5s;
+            box-sizing: border-box;
+        
+        
+        }
+        .home:hover,.createAnnouncement:hover,.updates:hover{
+            background-color: gainsboro;
+            color: #181818;
+            cursor: pointer;
+            border-radius: 10px;
+            font-weight: 700;
+        
+        }
+        .btn{
+        
+        border-radius: 30px;
+        padding: 20px;
+        color: #181818;
+        border-radius: 10px;
+        transition: background-color .5s, font-weight .3s, color .5s;
+        box-sizing: border-box;
+        }
+        .btn:hover{
+        background-color: gainsboro;
+        color: #181818;
+        cursor: pointer;
+        border-radius: 10px;
+        font-weight: 700;
+
+        }
+        #modal-ni{
+            font-size: l50px;
+            font: bolder;
+        }
+        
+          </style>
+ 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+    
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap JS (include Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+   <!-- Bootstrap Datepicker JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+<!-- Bootstrap Timepicker JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
+
+<script src="script.js"> </script>
+
+    
+<nav class="navbar">
+    <div class="navbarContent">
+        <div class="titleLogoContainer">
+        <div class="imageContainer"><img src="../image/cctc.png" alt="logo"> </div>
+        <div><a class="createAnnouncement" href="index.html">CCTC Announcement</a></div>
+    </div>
+        <div class="activityContainer">
+
+        
+        <div> <a class="createAnnouncement" href="update.html">Updates</a></div>
+        <div> <a class="createAnnouncement" href="create.html">Create Announcement</a></div>
+        
+    </div>
+    </div>
+</nav>
+    
+   
+    <section id="announce">
+        <div class="modal" id="makePlanModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" style="color: rgb(22, 21, 21); ">Make an Announcement</h3>
+                        <button type="button" class="close" id="closeBtn" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        
+                        </button>
+                    </div>
+                    <div class="modal-ni">
+                        
+                        <div id="successMessage" class="alert alert-success"  role="alert" style="display: none;"></div>
+                        <form id="contactForm" onsubmit="submitForm(event)">
+                            
+                           
+                            <br>
+                            <label for="name" style="color: black;">Created By:</label>
+                            <input id="name" class="form-control" type="text" aria-label="default input example" required>
+                            <br>
+                            <label for="what" style="color: black;">What:</label>
+                            <textarea id="what" class="form-control" rows="3" required></textarea>
+                            <br>
+                            <label for="when" style="color: black;">When:</label>
+                            <input id="when" type="date" class="form-control" id="eventDate" required>
+                            <br>
+                            <label for="time" style="color: black;">Event Time:</label>
+                            <input id="time" class="form-control" type="time" aria-label="default input example" required>
+                            <br>
+                            <label for="where" style="color: black;">Where:</label>
+                            <input id="where" class="form-control" type="text" aria-label="default input example" required>
+                            <br>
+                            <button class="btn" type="submit" style="border: 1px solid black; color: #181818 ;" >Submit</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+
+        <div class="boto" onclick="redirectToEvent()">
+            <i class="fas fa-keyboard" style="font-size: 2em; cursor: pointer;"></i>
+        </div>
+        
+        
+       
+        
+
+
+        <div id="allSubmissions"></div>
+        
+        
+    </section>
+ 
+
+    
+    
+    
+
+        
+    
+</body>
+
+
+
+
+</html>

@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title> CCTC Announcement</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+  
+  
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap JS (include Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Datepicker JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+    <!-- Bootstrap Timepicker JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
+
+
+
+
+    <nav class="navbar">
+        <div class="navbarContent">
+            <div class="titleLogoContainer">
+            <div class="imageContainer"><img src="../image/cctc.png" alt="logo"> </div>
+            <div><a class="createAnnouncement" href="index.html">CCTC Announcement</a></div>
+        </div>
+            <div class="activityContainer">
+
+            
+            <div> <a class="createAnnouncement" href="update.html">Updates</a></div>
+            <div> <a class="createAnnouncement" href="create.html">Create Announcement</a></div>
+            
+        </div>
+        </div>
+    </nav>
+
+    
+    
+ 
+    
+    <section id="home">
+        <div class="text-container">
+            <p class="slogan">"Unveiling Tomorrow's Moments, Today – CCTC Announcement, Where Every Update Resonates."</p>
+            
+                <button class="btn1" type="button" onclick="location.href='update.html'" id="makePlanLink">GET STARTED</button>   
+        </div>
+        <img id="background-img" src="image/ann.jpeg   " alt="Event Image">
+        
+        
+    </section>
+    <dialog class="modal2"></dialog>
+    <script src="script.js"></script>
+
+    
+    
+</body>
+
+<style>
+
+
+
+
+.text-container {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-99% );
+  text-align: left;
+  
+}
+
+.slogan {
+  margin-top: none;
+  color: rgb(22, 21, 21);
+  font-size: 40px;
+  font: bolder;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#background-img {
+  width: 100%;
+  height: auto; /* Ensure the image doesn't stretch */
+}
+
+.btn1 {
+    background-color: none;
+    border-radius: 20px;
+    padding: 10px;
+    font-weight: 500;
+    color: black;
+    border-radius: 10px;
+    transition: background-color .5s, font-weight .3s, color .5s;
+    box-sizing: border-box;
+}
+
+.btn1:hover{
+    background-color: gainsboro;
+    color: #181818;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: 700;
+
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    background-color: #181818;
+    color: #fbfbfb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    height: 70px;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    
+}
+.navbarContent{
+    display: flex;
+    align-items: center;
+    font-family:Helvetica, sans-serif;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    width: 98%;
+}
+.imageContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.imageContainer img{
+    height: 40px;
+    width: 40px;
+}
+.titleLogoContainer{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+.activityContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 60%;
+}
+.home,.createAnnouncement,.updates{
+    background-color: none;
+    border-radius: 20px;
+    padding: 10px;
+    font-weight: 500;
+    color: #fbfbfb;
+    border-radius: 10px;
+    transition: background-color .5s, font-weight .3s, color .5s;
+    box-sizing: border-box;
+
+
+}
+.home:hover,.createAnnouncement:hover,.updates:hover{
+    background-color: gainsboro;
+    color: #181818;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: 700;
+
+}
+
+  </style>
+
+
+</html>
